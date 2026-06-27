@@ -1,0 +1,392 @@
+{
+  "info": {
+    "_postman_id": "b0683acf-df67-4911-8502-d3444c2c32a9",
+    "name": "Users",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56208690",
+    "_collection_link": "https://go.postman.co/collection/56208690-b0683acf-df67-4911-8502-d3444c2c32a9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "RegisterUser",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// ============================================================",
+              "// RegisterUser — Assertions (driven by iteration variables)",
+              "// ============================================================",
+              "",
+              "const jsonData = pm.response.json();",
+              "const caseDescription = pm.variables.get(\"caseDescription\");",
+              "const expectedStatus  = parseInt(pm.variables.get(\"expectedStatus\"));",
+              "const expectedSuccess = pm.variables.get(\"expectedSuccess\") === \"true\" || pm.variables.get(\"expectedSuccess\") === true;",
+              "const expectedMessage = pm.variables.get(\"expectedMessage\");",
+              "",
+              "pm.test(`[${caseDescription}] Status code is ${expectedStatus}`, function () {",
+              "    pm.response.to.have.status(expectedStatus);",
+              "});",
+              "",
+              "pm.test(`[${caseDescription}] success is ${expectedSuccess}`, function () {",
+              "    pm.expect(jsonData.success).to.eql(expectedSuccess);",
+              "});",
+              "",
+              "pm.test(`[${caseDescription}] Message is '${expectedMessage}'`, function () {",
+              "    pm.expect(jsonData.message).to.eql(expectedMessage);",
+              "});",
+              "",
+              "// For valid case: also assert the returned data shape",
+              "if (expectedStatus === 201) {",
+              "    pm.test(`[${caseDescription}] Response contains user id`, function () {",
+              "        pm.expect(jsonData.data).to.have.property(\"id\");",
+              "    });",
+              "    pm.test(`[${caseDescription}] Response contains user email`, function () {",
+              "        pm.expect(jsonData.data).to.have.property(\"email\");",
+              "    });",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "// ============================================================",
+              "// RegisterUser — Iteration-driven test cases",
+              "// Each iteration runs one scenario. The collection runner",
+              "// should be set to iterate 4 times (one per case below).",
+              "// ============================================================",
+              "",
+              "const uniqueSuffix = Date.now() + Math.floor(Math.random() * 1000);",
+              "",
+              "const testCases = [",
+              "    {",
+              "        // Case 1 — Valid registration (unique data each run)",
+              "        description: \"Valid registration\",",
+              "        name: `TestUser${uniqueSuffix}`,",
+              "        email: `testuser_${uniqueSuffix}@test.com`,",
+              "        password: \"Test1234!\",",
+              "        expectedStatus: 201,",
+              "        expectedSuccess: true,",
+              "        expectedMessage: \"User account created successfully\"",
+              "    },",
+              "    {",
+              "        // Case 2 — All fields empty",
+              "        description: \"All fields empty\",",
+              "        name: \"\",",
+              "        email: \"\",",
+              "        password: \"\",",
+              "        expectedStatus: 400,",
+              "        expectedSuccess: false,",
+              "        expectedMessage: \"User name must be between 4 and 30 characters\"",
+              "    },",
+              "    {",
+              "        // Case 3 — Missing email",
+              "        description: \"Missing email\",",
+              "        name: \"TestUser\",",
+              "        email: \"\",",
+              "        password: \"Test1234!\",",
+              "        expectedStatus: 400,",
+              "        expectedSuccess: false,",
+              "        expectedMessage: \"A valid email address is required\"",
+              "    },",
+              "    {",
+              "        // Case 4 — Invalid email format",
+              "        description: \"Invalid email format\",",
+              "        name: \"TestUser\",",
+              "        email: \"notanemail\",",
+              "        password: \"Test1234!\",",
+              "        expectedStatus: 400,",
+              "        expectedSuccess: false,",
+              "        expectedMessage: \"A valid email address is required\"",
+              "    }",
+              "];",
+              "",
+              "// Pick the case for this iteration (loops back if more iterations than cases)",
+              "const caseIndex = (pm.info.iteration || 0) % testCases.length;",
+              "const currentCase = testCases[caseIndex];",
+              "",
+              "// Set iteration variables (visible in the Variables tab during a run)",
+              "pm.variables.set(\"name\", currentCase.name);",
+              "pm.variables.set(\"email\", currentCase.email);",
+              "pm.variables.set(\"password\", currentCase.password);",
+              "",
+              "// Store expected values for assertions in the test script",
+              "pm.variables.set(\"expectedStatus\", currentCase.expectedStatus);",
+              "pm.variables.set(\"expectedSuccess\", currentCase.expectedSuccess);",
+              "pm.variables.set(\"expectedMessage\", currentCase.expectedMessage);",
+              "pm.variables.set(\"caseDescription\", currentCase.description);",
+              "",
+              "// For Case 1 (valid), also save to environment so Login can reuse the account",
+              "if (caseIndex === 0) {",
+              "    pm.environment.set(\"registeredEmail\", currentCase.email);",
+              "    pm.environment.set(\"registeredPassword\", currentCase.password);",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "{{name}}",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{email}}",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "{{password}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://practice.expandtesting.com/notes/api/users/register",
+          "protocol": "https",
+          "host": [
+            "practice",
+            "expandtesting",
+            "com"
+          ],
+          "path": [
+            "notes",
+            "api",
+            "users",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "LoginUser",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// ============================================================",
+              "// LoginUser — Assertions (Supports both individual & data-driven testing)",
+              "// ============================================================",
+              "",
+              "const jsonData = pm.response.json();",
+              "",
+              "// Check if we're running with data-driven variables",
+              "const caseDescription = pm.variables.get(\"caseDescription\");",
+              "const expectedStatus = pm.variables.get(\"expectedStatus\");",
+              "const expectedSuccess = pm.variables.get(\"expectedSuccess\");",
+              "const expectedMessage = pm.variables.get(\"expectedMessage\");",
+              "",
+              "// Determine if we're in data-driven mode",
+              "const isDataDriven = caseDescription !== undefined && expectedStatus !== undefined;",
+              "",
+              "if (isDataDriven) {",
+              "    // ============================================================",
+              "    // DATA-DRIVEN MODE (Collection Run with CSV/JSON)",
+              "    // ============================================================",
+              "    const expectedStatusCode = parseInt(expectedStatus);",
+              "    const expectedSuccessValue = expectedSuccess === \"true\" || expectedSuccess === true;",
+              "    ",
+              "    pm.test(`[${caseDescription}] Status code is ${expectedStatusCode}`, function () {",
+              "        pm.response.to.have.status(expectedStatusCode);",
+              "    });",
+              "    ",
+              "    pm.test(`[${caseDescription}] success is ${expectedSuccessValue}`, function () {",
+              "        pm.expect(jsonData.success).to.eql(expectedSuccessValue);",
+              "    });",
+              "    ",
+              "    pm.test(`[${caseDescription}] Message is '${expectedMessage}'`, function () {",
+              "        pm.expect(jsonData.message).to.eql(expectedMessage);",
+              "    });",
+              "    ",
+              "    // For valid login: save the token for subsequent requests",
+              "    if (expectedStatusCode === 200 && jsonData.data && jsonData.data.token) {",
+              "        pm.environment.set(\"authToken\", jsonData.data.token);",
+              "        console.log(\"✓ Auth token saved to environment\");",
+              "    }",
+              "} else {",
+              "    // ============================================================",
+              "    // INDIVIDUAL REQUEST MODE (Default validation)",
+              "    // ============================================================",
+              "    pm.test(\"Status code is 200 or 4xx\", function () {",
+              "        pm.expect(pm.response.code).to.be.oneOf([200, 400, 401, 404]);",
+              "    });",
+              "    ",
+              "    pm.test(\"Response has required structure\", function () {",
+              "        pm.expect(jsonData).to.have.property(\"success\");",
+              "        pm.expect(jsonData).to.have.property(\"status\");",
+              "        pm.expect(jsonData).to.have.property(\"message\");",
+              "    });",
+              "    ",
+              "    pm.test(\"success field is boolean\", function () {",
+              "        pm.expect(jsonData.success).to.be.a(\"boolean\");",
+              "    });",
+              "    ",
+              "    // If login is successful, validate data structure and save token",
+              "    if (pm.response.code === 200 && jsonData.success === true) {",
+              "        pm.test(\"Successful login has data object\", function () {",
+              "            pm.expect(jsonData).to.have.property(\"data\");",
+              "            pm.expect(jsonData.data).to.have.property(\"id\");",
+              "            pm.expect(jsonData.data).to.have.property(\"name\");",
+              "            pm.expect(jsonData.data).to.have.property(\"email\");",
+              "            pm.expect(jsonData.data).to.have.property(\"token\");",
+              "        });",
+              "        ",
+              "        // Save token for subsequent requests",
+              "        if (jsonData.data && jsonData.data.token) {",
+              "            pm.environment.set(\"authToken\", jsonData.data.token);",
+              "            console.log(\"✓ Auth token saved to environment\");",
+              "        }",
+              "    }",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json",
+            "disabled": false
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "type": "text",
+              "key": "email",
+              "value": "{{Email}}"
+            },
+            {
+              "type": "text",
+              "key": "password",
+              "value": "{{Password}}"
+            },
+            {
+              "key": "",
+              "value": "",
+              "type": "text",
+              "uuid": "c74f4b71-4b5b-4ba1-a7c3-725605751a21"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://practice.expandtesting.com/notes/api/users/login",
+          "protocol": "https",
+          "host": [
+            "practice",
+            "expandtesting",
+            "com"
+          ],
+          "path": [
+            "notes",
+            "api",
+            "users",
+            "login"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"https://practice.expandtesting.com/notes/api/users/login\" -H \"accept: application/json\" -H \"Content-Type: application/x-www-form-urlencoded\" --data-urlencode \"email={{email}}\" --data-urlencode \"password={{password}}\""
+      },
+      "response": []
+    },
+    {
+      "name": "GetProfile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "application/json"
+          },
+          {
+            "key": "x-auth-token",
+            "value": "{{authToken}}"
+          }
+        ],
+        "url": {
+          "raw": "https://practice.expandtesting.com/notes/api/users/profile",
+          "protocol": "https",
+          "host": [
+            "practice",
+            "expandtesting",
+            "com"
+          ],
+          "path": [
+            "notes",
+            "api",
+            "users",
+            "profile"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "Email",
+      "value": ""
+    },
+    {
+      "key": "Password",
+      "value": ""
+    }
+  ]
+}
