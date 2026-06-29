@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Final Project Suite" verbose="1">
+
+
+    <listeners>
+        <listener class-name="listeners.ExtentListener"/>
+    </listeners>
+
+    <test name="Forgot Password Test">
+        <classes>
+            <class name="tests.ForgotPasswordTest"/>
+        </classes>
+    </test>
+
+    <test name="Web Inputs Test">
+        <classes>
+            <class name="tests.WebInputsTest"/>
+        </classes>
+    </test>
+
+    <test name="Form Validation Test">
+        <classes>
+            <class name="tests.FormValidationTest"/>
+        </classes>
+    </test>
+
+    <test name="Drag and Drop Test">
+        <classes>
+            <class name="tests.DragAndDropTest"/>
+        </classes>
+    </test>
+
+    <test name="User Registration Test">
+        <classes>
+            <class name="tests.UserRegistrationTest"/>
+        </classes>
+    </test>
+
+    <test name="SecurePasswordCheckerTest">
+        <classes>
+            <class name="tests.SecurePasswordCheckerTest"/>
+        </classes>
+    </test>
+
+    <test name="Contact Us Test">
+        <classes>
+            <class name="tests.ContactUsTest"/>
+        </classes>
+    </test>
+
+    <test name="Login Test">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>
