@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Final Project Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="listeners.ExtentListener"/>
+  </listeners>
+  <test thread-count="5" name="Forgot Password Test(failed)" verbose="0">
+    <classes>
+      <class name="tests.ForgotPasswordTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="testForgotPasswordFullJourney"/>
+        </methods>
+      </class> <!-- tests.ForgotPasswordTest -->
+    </classes>
+  </test> <!-- Forgot Password Test(failed) -->
+  <test thread-count="5" name="Contact Us Test(failed)" verbose="0">
+    <classes>
+      <class name="tests.ContactUsTest">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="submitContactForm"/>
+        </methods>
+      </class> <!-- tests.ContactUsTest -->
+    </classes>
+  </test> <!-- Contact Us Test(failed) -->
+</suite> <!-- Failed suite [Final Project Suite] -->

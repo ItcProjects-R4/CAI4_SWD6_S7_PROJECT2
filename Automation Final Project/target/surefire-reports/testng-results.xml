@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="16" passed="14" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-06-29T18:39:44 EEST" name="Final Project Suite" finished-at="2026-06-29T18:50:56 EEST" duration-ms="672365">
+    <groups>
+    </groups>
+    <test started-at="2026-06-29T18:39:44 EEST" name="Forgot Password Test" finished-at="2026-06-29T18:40:47 EEST" duration-ms="62583">
+      <class name="tests.ForgotPasswordTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ForgotPasswordTest@5e0826e7]" started-at="2026-06-29T18:39:44 EEST" name="setup" finished-at="2026-06-29T18:39:50 EEST" duration-ms="5630" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testForgotPasswordFullJourney()[pri:0, instance:tests.ForgotPasswordTest@5e0826e7]" started-at="2026-06-29T18:39:50 EEST" name="testForgotPasswordFullJourney" finished-at="2026-06-29T18:40:45 EEST" duration-ms="55150" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[unknown error: net::ERR_INTERNET_DISCONNECTED
+  (Session info: MicrosoftEdge=149.0.4022.69)
+Build info: version: '4.43.0', revision: 'dd0f534'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [dc6ae0767ce9f19d7ce4d69fd55aa42f, get {url=https://practice.expandtesting.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.69, fedcm:accounts: true, goog:processID: 12056, ms:edgeOptions: {debuggerAddress: localhost:55067}, msedge: {msedgedriverVersion: 149.0.4022.98 (d8414318246f..., userDataDir: C:\Users\MOHAME~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55067/devtoo..., se:cdpVersion: 149.0.4022.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc6ae0767ce9f19d7ce4d69fd55aa42f]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: net::ERR_INTERNET_DISCONNECTED
+  (Session info: MicrosoftEdge=149.0.4022.69)
+Build info: version: '4.43.0', revision: 'dd0f534'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.11'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [dc6ae0767ce9f19d7ce4d69fd55aa42f, get {url=https://practice.expandtesting.com/login}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 149.0.4022.69, fedcm:accounts: true, goog:processID: 12056, ms:edgeOptions: {debuggerAddress: localhost:55067}, msedge: {msedgedriverVersion: 149.0.4022.98 (d8414318246f..., userDataDir: C:\Users\MOHAME~1\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55067/devtoo..., se:cdpVersion: 149.0.4022.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: dc6ae0767ce9f19d7ce4d69fd55aa42f
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+at tests.ForgotPasswordTest.testForgotPasswordFullJourney(ForgotPasswordTest.java:74)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForgotPasswordFullJourney -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.ForgotPasswordTest@5e0826e7]" started-at="2026-06-29T18:40:45 EEST" name="teardown" finished-at="2026-06-29T18:40:47 EEST" duration-ms="1658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.ForgotPasswordTest -->
+    </test> <!-- Forgot Password Test -->
+    <test started-at="2026-06-29T18:40:47 EEST" name="Web Inputs Test" finished-at="2026-06-29T18:41:43 EEST" duration-ms="56262">
+      <class name="tests.WebInputsTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.WebInputsTest@145f66e3]" started-at="2026-06-29T18:40:47 EEST" name="setup" finished-at="2026-06-29T18:40:55 EEST" duration-ms="7933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testWebInputsFullJourney()[pri:0, instance:tests.WebInputsTest@145f66e3]" started-at="2026-06-29T18:40:55 EEST" name="testWebInputsFullJourney" finished-at="2026-06-29T18:41:41 EEST" duration-ms="46550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWebInputsFullJourney -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.WebInputsTest@145f66e3]" started-at="2026-06-29T18:41:41 EEST" name="teardown" finished-at="2026-06-29T18:41:43 EEST" duration-ms="1779" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.WebInputsTest -->
+    </test> <!-- Web Inputs Test -->
+    <test started-at="2026-06-29T18:41:43 EEST" name="Form Validation Test" finished-at="2026-06-29T18:42:14 EEST" duration-ms="30198">
+      <class name="tests.FormValidationTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.FormValidationTest@2a65fe7c]" started-at="2026-06-29T18:41:43 EEST" name="setup" finished-at="2026-06-29T18:41:48 EEST" duration-ms="4306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testFormValidationFullJourney()[pri:0, instance:tests.FormValidationTest@2a65fe7c]" started-at="2026-06-29T18:41:48 EEST" name="testFormValidationFullJourney" finished-at="2026-06-29T18:42:12 EEST" duration-ms="24595" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFormValidationFullJourney -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.FormValidationTest@2a65fe7c]" started-at="2026-06-29T18:42:12 EEST" name="teardown" finished-at="2026-06-29T18:42:14 EEST" duration-ms="1297" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.FormValidationTest -->
+    </test> <!-- Form Validation Test -->
+    <test started-at="2026-06-29T18:42:14 EEST" name="Drag and Drop Test" finished-at="2026-06-29T18:42:46 EEST" duration-ms="32688">
+      <class name="tests.DragAndDropTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.DragAndDropTest@7cc0cdad]" started-at="2026-06-29T18:42:14 EEST" name="setup" finished-at="2026-06-29T18:42:19 EEST" duration-ms="4922" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testDragAndDropFullJourney()[pri:0, instance:tests.DragAndDropTest@7cc0cdad]" started-at="2026-06-29T18:42:19 EEST" name="testDragAndDropFullJourney" finished-at="2026-06-29T18:42:44 EEST" duration-ms="25157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDragAndDropFullJourney -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.DragAndDropTest@7cc0cdad]" started-at="2026-06-29T18:42:44 EEST" name="teardown" finished-at="2026-06-29T18:42:46 EEST" duration-ms="2609" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.DragAndDropTest -->
+    </test> <!-- Drag and Drop Test -->
+    <test started-at="2026-06-29T18:42:46 EEST" name="User Registration Test" finished-at="2026-06-29T18:44:14 EEST" duration-ms="87995">
+      <class name="tests.UserRegistrationTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.UserRegistrationTest@48f2bd5b]" started-at="2026-06-29T18:42:46 EEST" name="setup" finished-at="2026-06-29T18:42:51 EEST" duration-ms="4059" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testPasswordMismatchFullJourney()[pri:0, instance:tests.UserRegistrationTest@48f2bd5b]" started-at="2026-06-29T18:42:51 EEST" name="testPasswordMismatchFullJourney" finished-at="2026-06-29T18:43:32 EEST" duration-ms="41247" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPasswordMismatchFullJourney -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.UserRegistrationTest@48f2bd5b]" started-at="2026-06-29T18:43:32 EEST" name="teardown" finished-at="2026-06-29T18:43:33 EEST" duration-ms="1566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.UserRegistrationTest@48f2bd5b]" started-at="2026-06-29T18:43:33 EEST" name="setup" finished-at="2026-06-29T18:43:41 EEST" duration-ms="7623" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testValidRegistrationFullJourney()[pri:0, instance:tests.UserRegistrationTest@48f2bd5b]" started-at="2026-06-29T18:43:41 EEST" name="testValidRegistrationFullJourney" finished-at="2026-06-29T18:44:13 EEST" duration-ms="32052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidRegistrationFullJourney -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.UserRegistrationTest@48f2bd5b]" started-at="2026-06-29T18:44:13 EEST" name="teardown" finished-at="2026-06-29T18:44:14 EEST" duration-ms="1448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.UserRegistrationTest -->
+    </test> <!-- User Registration Test -->
+    <test started-at="2026-06-29T18:44:14 EEST" name="SecurePasswordCheckerTest" finished-at="2026-06-29T18:44:46 EEST" duration-ms="31151">
+      <class name="tests.SecurePasswordCheckerTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.SecurePasswordCheckerTest@22555ebf]" started-at="2026-06-29T18:44:14 EEST" name="setup" finished-at="2026-06-29T18:44:23 EEST" duration-ms="8318" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testPasswordCheckerFullJourney()[pri:0, instance:tests.SecurePasswordCheckerTest@22555ebf]" started-at="2026-06-29T18:44:23 EEST" name="testPasswordCheckerFullJourney" finished-at="2026-06-29T18:44:45 EEST" duration-ms="21980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPasswordCheckerFullJourney -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.SecurePasswordCheckerTest@22555ebf]" started-at="2026-06-29T18:44:45 EEST" name="teardown" finished-at="2026-06-29T18:44:46 EEST" duration-ms="853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.SecurePasswordCheckerTest -->
+    </test> <!-- SecurePasswordCheckerTest -->
+    <test started-at="2026-06-29T18:44:46 EEST" name="Contact Us Test" finished-at="2026-06-29T18:47:54 EEST" duration-ms="188710">
+      <class name="tests.ContactUsTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:44:46 EEST" name="setup" finished-at="2026-06-29T18:44:50 EEST" duration-ms="4389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="navigateToContactUs()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:44:50 EEST" name="navigateToContactUs" finished-at="2026-06-29T18:45:20 EEST" duration-ms="30495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToContactUs -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:45:20 EEST" name="teardown" finished-at="2026-06-29T18:45:22 EEST" duration-ms="1594" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:45:22 EEST" name="setup" finished-at="2026-06-29T18:45:29 EEST" duration-ms="6503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="submitContactForm()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:45:29 EEST" name="submitContactForm" finished-at="2026-06-29T18:46:06 EEST" duration-ms="37658" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[KNOWN BUG (raised by Eslam): the 'Send' control is an <a href="#"> link, not a real submit button - clicking it only scrolls to the top of the page and never submits the form, so no success/confirmation message appears. This test stays red until the bug is fixed. expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: KNOWN BUG (raised by Eslam): the 'Send' control is an <a href="#"> link, not a real submit button - clicking it only scrolls to the top of the page and never submits the form, so no success/confirmation message appears. This test stays red until the bug is fixed. expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at tests.ContactUsTest.submitContactForm(ContactUsTest.java:102)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitContactForm -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:46:06 EEST" name="teardown" finished-at="2026-06-29T18:46:10 EEST" duration-ms="3860" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:46:10 EEST" name="setup" finished-at="2026-06-29T18:46:16 EEST" duration-ms="5912" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyContactFormFieldsPresent()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:46:16 EEST" name="verifyContactFormFieldsPresent" finished-at="2026-06-29T18:46:42 EEST" duration-ms="26454" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContactFormFieldsPresent -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:46:42 EEST" name="teardown" finished-at="2026-06-29T18:46:44 EEST" duration-ms="1529" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:46:44 EEST" name="setup" finished-at="2026-06-29T18:46:49 EEST" duration-ms="4758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyContactHeader()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:46:49 EEST" name="verifyContactHeader" finished-at="2026-06-29T18:47:18 EEST" duration-ms="29444" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyContactHeader -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:47:18 EEST" name="teardown" finished-at="2026-06-29T18:47:20 EEST" duration-ms="1367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:47:20 EEST" name="setup" finished-at="2026-06-29T18:47:25 EEST" duration-ms="5890" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyHomePageLoads()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:47:25 EEST" name="verifyHomePageLoads" finished-at="2026-06-29T18:47:53 EEST" duration-ms="27243" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageLoads -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.ContactUsTest@6a6cb05c]" started-at="2026-06-29T18:47:53 EEST" name="teardown" finished-at="2026-06-29T18:47:54 EEST" duration-ms="1607" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.ContactUsTest -->
+    </test> <!-- Contact Us Test -->
+    <test started-at="2026-06-29T18:47:54 EEST" name="Login Test" finished-at="2026-06-29T18:50:56 EEST" duration-ms="181957">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:47:54 EEST" name="setup" finished-at="2026-06-29T18:48:01 EEST" duration-ms="7058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFlows(java.lang.String,java.lang.String,java.lang.String,boolean)[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:48:01 EEST" name="testLoginFlows" data-provider="loginScenarios" finished-at="2026-06-29T18:48:50 EEST" duration-ms="48808" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Valid Login]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[practice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SuperSecretPassword!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFlows -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:48:50 EEST" name="teardown" finished-at="2026-06-29T18:48:52 EEST" duration-ms="1614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:48:52 EEST" name="setup" finished-at="2026-06-29T18:48:57 EEST" duration-ms="5433" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFlows(java.lang.String,java.lang.String,java.lang.String,boolean)[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:48:57 EEST" name="testLoginFlows" data-provider="loginScenarios" finished-at="2026-06-29T18:49:24 EEST" duration-ms="27225" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Invalid Username]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[wrongUser]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SuperSecretPassword!]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFlows -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:49:24 EEST" name="teardown" finished-at="2026-06-29T18:49:26 EEST" duration-ms="1472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:49:26 EEST" name="setup" finished-at="2026-06-29T18:49:29 EEST" duration-ms="2971" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFlows(java.lang.String,java.lang.String,java.lang.String,boolean)[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:49:29 EEST" name="testLoginFlows" data-provider="loginScenarios" finished-at="2026-06-29T18:50:01 EEST" duration-ms="31754" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Invalid Password]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[practice]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[WrongPassword123]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFlows -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:50:01 EEST" name="teardown" finished-at="2026-06-29T18:50:01 EEST" duration-ms="812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:50:01 EEST" name="setup" finished-at="2026-06-29T18:50:06 EEST" duration-ms="4971" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testLoginFlows(java.lang.String,java.lang.String,java.lang.String,boolean)[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:50:06 EEST" name="testLoginFlows" data-provider="loginScenarios" finished-at="2026-06-29T18:50:53 EEST" duration-ms="46953" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Empty Fields]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginFlows -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.LoginTest@3eb25e1a]" started-at="2026-06-29T18:50:53 EEST" name="teardown" finished-at="2026-06-29T18:50:56 EEST" duration-ms="2879" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Login Test -->
+  </suite> <!-- Final Project Suite -->
+</testng-results>
