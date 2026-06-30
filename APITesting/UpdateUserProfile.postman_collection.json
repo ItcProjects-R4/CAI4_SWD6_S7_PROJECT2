@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "UpdateUserProfile (Working Auth)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "UpdateUserProfile",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json();",
+              "",
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('success is true', function () {",
+              "    pm.expect(jsonData.success).to.eql(true);",
+              "});",
+              "",
+              "pm.test(\"Message is 'Profile updated successful'\", function () {",
+              "    pm.expect(jsonData.message).to.eql('Profile updated successful');",
+              "});",
+              "",
+              "pm.test('Updated name matches sent name', function () {",
+              "    pm.expect(jsonData.data.name).to.eql('Abdelrahman Mohamed');",
+              "});",
+              "",
+              "pm.test('Updated phone matches sent phone', function () {",
+              "    pm.expect(jsonData.data.phone).to.eql('01012345678');",
+              "});",
+              "",
+              "pm.test('Updated company matches sent company', function () {",
+              "    pm.expect(jsonData.data.company).to.eql('DEPI Automation Team');",
+              "});",
+              "",
+              "pm.test('Response data has correct structure', function () {",
+              "    pm.expect(jsonData.data).to.have.property('id');",
+              "    pm.expect(jsonData.data).to.have.property('name');",
+              "    pm.expect(jsonData.data).to.have.property('email');",
+              "    pm.expect(jsonData.data).to.have.property('phone');",
+              "    pm.expect(jsonData.data).to.have.property('company');",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PATCH",
+        "header": [
+          { "key": "accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/x-www-form-urlencoded" },
+          { "key": "x-auth-token", "value": "50fdad70b058494a83bb015c0646a429a5516e4292954f3e93d554889b855057" }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "name", "value": "Abdelrahman Mohamed", "type": "text" },
+            { "key": "phone", "value": "01012345678", "type": "text" },
+            { "key": "company", "value": "DEPI Automation Team", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "https://practice.expandtesting.com/notes/api/users/profile",
+          "protocol": "https",
+          "host": ["practice", "expandtesting", "com"],
+          "path": ["notes", "api", "users", "profile"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
